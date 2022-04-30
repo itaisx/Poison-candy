@@ -41,7 +41,7 @@
             ></a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-item nav-link"
+            <a class="nav-item nav-link" onclick="gotoDiv(1)"
               ><div class="howto-btn"></div
             ></a>
           </li>
@@ -135,7 +135,7 @@
         </div>
       </div>
     </div>
-    <div class="row home-container" style="margin-top: 20%">
+    <div class="row home-container" id="1" style="margin-top: 20%">
       <div class="col flexbox1">
         <div class="card customcard2">
           <div class="card-body">
@@ -219,6 +219,15 @@
           x[i].style.display = 'none';
         }
         x[slideIndex - 1].style.display = 'block';
+      }
+
+      function gotoDiv(id) {
+        const yOffset = -75;
+        const element = document.getElementById(id);
+        const y =
+          element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
       }
     </script>
   </body>
